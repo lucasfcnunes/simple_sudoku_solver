@@ -1,15 +1,7 @@
-
 # coding: utf-8
-
-# In[ ]:
-
 
 import numpy as np
 from collections import defaultdict
-
-
-# In[ ]:
-
 
 sudoku = np.array(
 [[5, 1, 7, 6, 0, 0, 0, 3, 4],
@@ -21,10 +13,6 @@ sudoku = np.array(
  [0, 9, 0, 0, 0, 0, 0, 7, 8],
  [7, 0, 3, 4, 0, 0, 5, 6, 0],
  [0, 0, 0, 0, 0, 0, 0, 0, 0]]).reshape((9,9))
-
-
-# In[ ]:
-
 
 def solve_sudoku(sudoku, solve_multisolution: bool = False):
     '''Takes sudoku 9x9 array and solves zeros to numbers from 1 to 9. *Only works for 01 solution sudokus.'''
@@ -75,4 +63,3 @@ def solve_sudoku(sudoku, solve_multisolution: bool = False):
             print("Solved!")
             print(sudoku)
             return {'solved': True, 'result': sudoku, 'notes': notes}
-
