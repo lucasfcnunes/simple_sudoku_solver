@@ -26,9 +26,9 @@ def solve_sudoku(sudoku, solve_multisolution: bool = False):
     while(True):
         notes = defaultdict(set) #all possible solutions for one given cell
         if iteration_count == 0:
-            cells = tuple(zip(*np.where(sudoku!=-1))) #check all cells
+            cells = zip(*np.where(sudoku!=-1)) #check all cells
         else:
-            cells = tuple(zip(*np.where(sudoku==0))) #refresh to check only the zeros to decrease needed computations
+            cells = zip(*np.where(sudoku==0)) #refresh to check only the zeros to decrease needed computations
         for (i, j) in cells:
             iunique, icounts = np.unique(sudoku[ i, :], return_counts=True)
             junique, jcounts = np.unique(sudoku[ :, j], return_counts=True)
